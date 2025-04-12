@@ -49,11 +49,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body style={{ backgroundColor: '#F8F9FA' }}>
+      <body style={{ backgroundColor: '#F8F9FA', margin: 0 }}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
               {/* Fixed Header */}
               <Box
                 component="header"
@@ -65,7 +65,6 @@ export default function RootLayout({
                   zIndex: 1100,
                   backgroundColor: 'background.default',
                   boxShadow: 1,
-                  marginBottom: `calc(${baseSpacing}px * 5) !important`, // Adjust based on Footer height
                 }}
               >
                 <Header />
@@ -75,15 +74,14 @@ export default function RootLayout({
               <Box
                 component="main"
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  width: '100%',
-                  padding: `100px 24px !important`, // Use base spacing value
+                  flexGrow: 1,
+                  overflowY: 'auto !important', // Enable scrolling
+                  marginTop: '64px !important', // Adjust based on Header height
+                  marginBottom: '64px !important', // Adjust based on Footer height
+                  display: 'flex !important',
+                  justifyContent: 'center !important',
+                  padding: `24px !important`,
                   gap: '16px !important',
-                  // flexGrow: 1,
-                  // overflowY: 'auto',
-                  // marginTop: '64px', // Adjust based on Header height
-                  // marginBottom: '64px', // Adjust based on Footer height
                 }}
               >
                 <Container sx={{ display: 'flex', flexGrow: 1, py: { xs: 3, sm: 4, md: 5 } }}>

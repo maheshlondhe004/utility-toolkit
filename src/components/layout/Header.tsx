@@ -10,15 +10,22 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
 import Drawer from '@mui/material/Drawer';
 import Divider from '@mui/material/Divider';
+import List from '@mui/material/List';
 import Container from '@mui/material/Container';
 import AppsIcon from '@mui/icons-material/Apps';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 import Head from 'next/head';
+import { tools } from '@/lib/toolsData';
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [elevated, setElevated] = React.useState(false);
 
     const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
+    const activeTools = tools.filter(tool => tool.status === 'active' && tool.href && typeof tool.href === 'string' && tool.href.trim() !== '');
 
     // const scrollLinks = [
     //     { label: 'Tools', href: '/#tools' },
@@ -42,20 +49,20 @@ export default function Header() {
                 ToolsVerse
             </Typography>
             <Divider />
-            {/* <List>
-                {scrollLinks.map((item) => (
+            <List>
+                {activeTools.map((item) => (
                     <ListItem key={item.href} disablePadding>
                         <ListItemButton component={Link} href={item.href}>
-                            <ListItemText primary={item.label} />
+                            <ListItemText primary={item.name} />
                         </ListItemButton>
                     </ListItem>
                 ))}
-                <ListItem disablePadding>
+                {/* <ListItem disablePadding>
                     <ListItemButton component={Link} href="/login">
                         <ListItemText primary="Sign In" />
                     </ListItemButton>
-                </ListItem>
-            </List> */}
+                </ListItem> */}
+            </List>
         </Box>
     );
 

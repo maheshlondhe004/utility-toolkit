@@ -16,6 +16,8 @@ const ImageCompressor = () => {
     const [imageType, setImageType] = useState('');
     const [originalSize, setOriginalSize] = useState(0);
     const [compressedSize, setCompressedSize] = useState(0);
+    const [imageWidth, setImageWidth] = useState(0);
+    const [imageHeight, setImageHeight] = useState(0);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,7 +31,15 @@ const ImageCompressor = () => {
                 const reader = new FileReader();
                 reader.onload = (e) => {
                     if (e.target && e.target.result) {
-                        setImage(e.target.result as string);
+                        const img = new window.Image();
+                        img.onload = () => {
+                            setImageWidth(img.width);
+                            setImageHeight(img.height);
+                            if (e.target && e.target.result) {
+                                setImage(e.target.result as string);
+                            }
+                        };
+                        img.src = e.target.result as string;
                     }
                 };
                 reader.readAsDataURL(file);
@@ -111,9 +121,9 @@ const ImageCompressor = () => {
                 />
             <Box>
                 {/* Google Ads Banner */}
-                <Box width="97%" height={60} bgcolor="#f0f0f0" display="flex" justifyContent="center" alignItems="center" sx={{ mt: '16px !important', mb: '16px !important' }}>
+                {/* <Box width="97%" height={60} bgcolor="#f0f0f0" display="flex" justifyContent="center" alignItems="center" sx={{ mt: '16px !important', mb: '16px !important' }}>
                     <Typography sx={{ color: textColor }}>Advertisement</Typography>
-                </Box>
+                </Box> */}
 
                 {/* Title Section */}
                 <Box display="flex" alignItems="center" sx={{ mb: '16px !important', px: '16px !important' }}>
@@ -176,9 +186,9 @@ const ImageCompressor = () => {
                         </Card>
 
                         {/* Google Ads Section */}
-                        <Card sx={{ height: 120, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        {/* <Card sx={{ height: 120, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <Typography sx={{ color: textColor }}>Advertisement</Typography>
-                        </Card>
+                        </Card> */}
                     </Box>
 
                     {/* Right Side */}
@@ -199,7 +209,10 @@ const ImageCompressor = () => {
                                     }}
                                 >
                                     {compressedImage ? (
-                                        <Image src={compressedImage} alt="Compressed preview" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                                        <Image src={compressedImage} alt="Compressed preview"  
+                                        width={imageWidth} // Dynamically calculated width
+                                        height={imageHeight} // Dynamically calculated height 
+                                        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
                                     ) : (
                                         <ImageIcon titleAccess='compress image placeholder' fontSize="large" sx={{ color: '#ccc' }} />
                                     )}
@@ -241,9 +254,9 @@ const ImageCompressor = () => {
                 </Box>
 
                 {/* Bottom Google Ads */}
-                <Box width="100%" height={60} bgcolor="#f0f0f0" display="flex" justifyContent="center" alignItems="center" sx={{ mt: '24px !important' }}>
+                {/* <Box width="100%" height={60} bgcolor="#f0f0f0" display="flex" justifyContent="center" alignItems="center" sx={{ mt: '24px !important' }}>
                     <Typography sx={{ color: textColor }}>Advertisement</Typography>
-                </Box>
+                </Box> */}
             </Box>
         </>
     );

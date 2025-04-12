@@ -1,16 +1,41 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import Script from 'next/script';
 
 const InlineAd: React.FC = () => {
-    // In production, replace this with your Google AdSense script/component
+    useEffect(() => {
+        // Ensure adsbygoogle is loaded
+        if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+            (window as any).adsbygoogle.push({});
+        }
+    }, []);
+
     return (
-        <Box sx={{ p: 2, minHeight: '90px', width: '100%', maxWidth: '728px', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'grey.200', border: '1px dashed grey' }}>
-            <Typography variant="caption" color="text.secondary">
-                Inline Ad Space (e.g., 728x90)
-            </Typography>
-            {/* <Script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async strategy="lazyOnload" /> */}
-            {/* AdSense Unit Code */}
+        <Box
+            sx={{
+                p: 2,
+                minHeight: '90px',
+                width: '100%',
+                maxWidth: '728px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'grey.200',
+                border: '1px dashed grey',
+            }}
+        >
+            <ins
+                className="adsbygoogle"
+                style={{ display: 'block', width: '100%', height: '90px' }}
+                data-ad-client={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT} // Replace with your AdSense publisher ID
+                data-ad-slot={process.env.NEXT_PUBLIC_GOOGLE_AD_SLOT_ID} // Replace with your AdSense ad slot ID
+                data-ad-format="auto"
+            ></ins>
+            <Script
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+            ></Script>
         </Box>
     );
 };

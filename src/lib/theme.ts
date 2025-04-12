@@ -95,6 +95,16 @@ let theme = createTheme({
             defaultProps: {
                 // maxWidth: 'lg' // Default max width for containers
             }
+        },
+        MuiListItemText: {
+            styleOverrides: {
+                primary: {
+                    fontWeight: 500, // Adjust font weight
+                    fontSize: '1rem', // Adjust font size
+                    color: '#0F172A', // Navy blue color
+                    padding: '8px 16px !important', // Adjust padding
+                },
+            },
         }
         // Add more component overrides
     }
