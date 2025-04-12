@@ -43,7 +43,7 @@ export default function Footer() {
                     justifyContent: 'center', // Center content vertically
                 }}>
                     {/* Left: Branding */}
-                    {/* @ts-ignore */}
+                    {/* @ts-expect-error */}
                     <Grid item xs={12} sm={6} md={3} >
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             UtilityHub
@@ -54,7 +54,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Tools */}
-                    {/* @ts-ignore */}
+                    {/* @ts-expect-error */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             Tools
@@ -91,7 +91,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Company */}
-                    {/* @ts-ignore */}
+                    {/* @ts-expect-error */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             Company
@@ -115,7 +115,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Legal */}
-                    {/* @ts-ignore */}
+                    {/* @ts-expect-error */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             Legal

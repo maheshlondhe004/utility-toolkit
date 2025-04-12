@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useRef } from 'react';
-import { Box, Typography, Button, Grid, Slider, Select, MenuItem, Card, CardContent } from '@mui/material';
+import { Box, Typography, Button, Slider, Card, CardContent } from '@mui/material';
 import { CloudUpload, Image, Download } from '@mui/icons-material';
 
 const textColor = '#0F172A';
