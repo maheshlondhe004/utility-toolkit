@@ -4,6 +4,7 @@ import { Box, Typography, Button, Slider, Card, CardContent } from '@mui/materia
 import { CloudUpload, Image as ImageIcon, Download } from '@mui/icons-material';
 import Image from 'next/image';
 import Head from 'next/head';
+import Script from 'next/script';
 
 const textColor = '#0F172A';
 
@@ -103,6 +104,11 @@ const ImageCompressor = () => {
                 <meta property="og:image" content="https://www.toolsverse.in/assets/image-compressor-og.jpg" />
                 <link rel="canonical" href="https://www.toolsverse.in/image-compressor" />
             </Head>
+            <Script
+                    async
+                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}`}
+                    crossOrigin="anonymous"
+                />
             <Box>
                 {/* Google Ads Banner */}
                 <Box width="97%" height={60} bgcolor="#f0f0f0" display="flex" justifyContent="center" alignItems="center" sx={{ mt: '16px !important', mb: '16px !important' }}>
