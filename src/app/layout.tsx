@@ -10,6 +10,7 @@ import SidebarAd from '@/components/layout/SidebarAd';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import './globals.css';
+import Script from 'next/script';
 
 // Define base spacing value manually based on theme.ts
 // Fallback to 8 if theme.spacing is not defined for some reason
@@ -30,7 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body style={{backgroundColor: '#F8F9FA'}}>
+      <head>
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
+      </head>
+      <body style={{ backgroundColor: '#F8F9FA' }}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
