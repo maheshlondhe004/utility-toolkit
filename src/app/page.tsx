@@ -1,4 +1,5 @@
 // src/app/page.tsx
+'use client';
 import * as React from 'react';
 import Container from '@mui/material/Container'; // Already likely imported via layout
 import Typography from '@mui/material/Typography';
@@ -66,7 +67,7 @@ export default function HomePage() {
           Popular Tools
         </Typography>
         {/* Increased spacing on larger screens */}
-        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
+        <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{display: 'flex', justifyContent: 'center'}}>
           {tools.map((tool) => (
             // Grid item breakpoints remain good: 1 on xs, 2 on sm, 3 on md
             <Grid item key={tool.id} xs={12} sm={6} md={4}>

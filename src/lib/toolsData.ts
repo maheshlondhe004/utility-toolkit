@@ -29,7 +29,7 @@ export const tools: ToolInfo[] = [
         description: 'Convert between CSV and Excel formats seamlessly.',
         href: '/csv-excel-converter',
         icon: TableChartIcon,
-        status: 'active',
+        status: 'coming soon',
     },
     {
         id: 'pdf-doc-converter',
@@ -37,7 +37,7 @@ export const tools: ToolInfo[] = [
         description: 'Convert between Word and PDF formats easily.', // Matches image
         href: '/pdf-doc-converter',
         icon: PictureAsPdfIcon,
-        status: 'active',
+        status: 'coming soon',
     },
     {
         id: 'code-formatter', // From image
@@ -53,7 +53,7 @@ export const tools: ToolInfo[] = [
         description: 'Convert videos to different formats.', // Matches image (modified slightly for specific case) -> Changed to Video->MP3
         href: '/video-mp3-converter',
         icon: VideocamIcon,
-        status: 'active', // Assuming this one is planned
+        status: 'coming soon', // Assuming this one is planned
     },
     {
         id: 'image-editor', // From image
