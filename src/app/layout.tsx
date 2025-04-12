@@ -12,6 +12,7 @@ import Container from '@mui/material/Container';
 import './globals.css';
 import Script from 'next/script';
 
+
 // Define base spacing value manually based on theme.ts
 // Fallback to 8 if theme.spacing is not defined for some reason
 const baseSpacing = typeof theme.spacing === 'function'
@@ -32,6 +33,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>ToolsVerse - Your All-in-One Online Toolkit</title>
+        <meta name="description" content="ToolsVerse is your ultimate online toolkit offering file compression, optimization, and productivity tools to simplify your work. Explore our suite of tools to boost your efficiency." />
+        <meta name="keywords" content="ToolsVerse, online tools, productivity tools, file compressor, image optimizer, file converter, work simplification, all-in-one toolkit" />
+        <meta name="author" content="ToolsVerse Team" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="ToolsVerse - Your All-in-One Online Toolkit" />
+        <meta property="og:description" content="Simplify your work with ToolsVerse's suite of tools, including file compression, optimization, and productivity tools." />
+        <meta property="og:url" content="https://www.toolsverse.in" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.toolsverse.in/assets/home-og.jpg" />
+        <link rel="canonical" href="https://www.toolsverse.in" />
         <Script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}`}
