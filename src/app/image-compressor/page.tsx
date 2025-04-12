@@ -7,25 +7,32 @@ const textColor = '#0F172A';
 
 const ImageCompressor = () => {
     const [quality, setQuality] = useState(80);
-    const [image, setImage] = useState(null);
-    const [compressedImage, setCompressedImage] = useState(null);
+    const [image, setImage] = useState<string | null>(null);
+    const [compressedImage, setCompressedImage] = useState<string | null>(null);
     const [imageName, setImageName] = useState('');
     const [imageType, setImageType] = useState('');
     const [originalSize, setOriginalSize] = useState(0);
     const [compressedSize, setCompressedSize] = useState(0);
-    const fileInputRef = useRef();
+    const fileInputRef = useRef<HTMLInputElement | null>(null);
 
-    const handleFileChange = (event) => {
-        const file = event.target.files[0];
-        if (file && file.size <= 10 * 1024 * 1024) {
-            setImageName(file.name);
-            setImageType(file.type);
-            setOriginalSize(file.size);
-            const reader = new FileReader();
-            reader.onload = (e) => setImage(e.target.result);
-            reader.readAsDataURL(file);
-        } else {
-            alert('Please select an image smaller than 10MB.');
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
+        if (files && files[0]) {
+            const file = files[0];
+            if (file && file.size <= 10 * 1024 * 1024) {
+                setImageName(file.name);
+                setImageType(file.type);
+                setOriginalSize(file.size);
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    if (e.target && e.target.result) {
+                        setImage(e.target.result as string);
+                    }
+                };
+                reader.readAsDataURL(file);
+            } else {
+                alert('Please select an image smaller than 10MB.');
+            }
         }
     };
 
@@ -38,7 +45,11 @@ const ImageCompressor = () => {
             canvas.width = img.width;
             canvas.height = img.height;
             const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0);
+            if (ctx) {
+                ctx.drawImage(img, 0, 0);
+            } else {
+                alert('Failed to get canvas context. Please try again.');
+            }
 
             canvas.toBlob(
                 (blob) => {
@@ -61,7 +72,9 @@ const ImageCompressor = () => {
     };
 
     const triggerFileInput = () => {
-        fileInputRef.current.click();
+        if (fileInputRef.current) {
+            fileInputRef.current.click();
+        }
     };
 
     const getCompressionRatio = () => {
@@ -176,7 +189,7 @@ const ImageCompressor = () => {
                                     variant="contained"
                                     fullWidth
                                     startIcon={<Download />}
-                                    href={compressedImage}
+                                    href={compressedImage || ''}
                                     download="compressed-image.jpg"
                                     disabled={!compressedImage}
                                 >

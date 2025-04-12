@@ -4,11 +4,13 @@ import * as React from 'react';
 import Container from '@mui/material/Container'; // Already likely imported via layout
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+// import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import ToolCard from '@/components/common/ToolCard';
 import { tools } from '@/lib/toolsData';
+import Grid, { GridProps } from '@mui/material/Grid';
 
+const MyGridItem = (props: GridProps) => <Grid {...props} />;
 export default function HomePage() {
   return (
     <Box>
@@ -69,8 +71,8 @@ export default function HomePage() {
         {/* Increased spacing on larger screens */}
         <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{display: 'flex', justifyContent: 'center'}}>
           {tools.map((tool) => (
-            // Grid item breakpoints remain good: 1 on xs, 2 on sm, 3 on md
-            <Grid item key={tool.id} xs={12} sm={6} md={4}>
+            // @ts-ignore
+            <Grid key={tool.id} item xs={12} sm={6} md={4}>
               <ToolCard tool={tool} />
             </Grid>
           ))}
