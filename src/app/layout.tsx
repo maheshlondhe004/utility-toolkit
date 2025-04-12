@@ -21,7 +21,7 @@ const baseSpacing = typeof theme.spacing === 'function'
 
 
 export const metadata: Metadata = {
-  title: 'Utility Toolkit - All-in-One Online Tools',
+  title: 'ToolsVerse - Your All-in-One Online Toolkit',
   description: 'Compress images, convert files (CSV, Excel, PDF, DOC, Video to MP3), and more with our free online utility tools.',
 };
 
@@ -34,7 +34,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>ToolsVerse - Your All-in-One Online Toolkit</title>
-        <meta name="description" content="ToolsVerse is your ultimate online toolkit offering file compression, optimization, and productivity tools to simplify your work. Explore our suite of tools to boost your efficiency." />
         <meta name="keywords" content="ToolsVerse, online tools, productivity tools, file compressor, image optimizer, file converter, work simplification, all-in-one toolkit" />
         <meta name="author" content="ToolsVerse Team" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
