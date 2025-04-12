@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={{backgroundColor: '#F8F9FA'}}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
@@ -44,7 +44,7 @@ export default function RootLayout({
                   left: 0,
                   width: '100%',
                   zIndex: 1100,
-                  backgroundColor: 'background.paper',
+                  backgroundColor: 'background.default',
                   boxShadow: 1,
                   marginBottom: `calc(${baseSpacing}px * 5) !important`, // Adjust based on Footer height
                 }}

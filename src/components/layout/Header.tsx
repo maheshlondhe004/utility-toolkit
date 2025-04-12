@@ -24,11 +24,11 @@ export default function Header() {
 
     const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-    const scrollLinks = [
-        { label: 'Tools', href: '/#tools' },
-        { label: 'Pricing', href: '/#pricing' },
-        { label: 'Support', href: '/#support' },
-    ];
+    // const scrollLinks = [
+    //     { label: 'Tools', href: '/#tools' },
+    //     { label: 'Pricing', href: '/#pricing' },
+    //     { label: 'Support', href: '/#support' },
+    // ];
 
     // Elevation on scroll
     React.useEffect(() => {
@@ -46,7 +46,7 @@ export default function Header() {
                 UtilityHub
             </Typography>
             <Divider />
-            <List>
+            {/* <List>
                 {scrollLinks.map((item) => (
                     <ListItem key={item.href} disablePadding>
                         <ListItemButton component={Link} href={item.href}>
@@ -59,7 +59,7 @@ export default function Header() {
                         <ListItemText primary="Sign In" />
                     </ListItemButton>
                 </ListItem>
-            </List>
+            </List> */}
         </Box>
     );
 
@@ -99,7 +99,7 @@ export default function Header() {
                         </Box>
 
                         {/* Desktop Nav */}
-                        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
+                        {/* <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
                             {scrollLinks.map((item) => (
                                 <Button
                                     key={item.href}
@@ -131,7 +131,7 @@ export default function Header() {
                             >
                                 Sign In
                             </Button>
-                        </Box>
+                        </Box> */}
 
                         {/* Mobile Menu Icon */}
                         <Box sx={{ display: { xs: 'block', md: 'none' } }}>

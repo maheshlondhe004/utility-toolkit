@@ -31,11 +31,11 @@ let theme = createTheme({
     },
     typography: {
         fontFamily: roboto.style.fontFamily,
-        h1: { fontWeight: 700 },
-        h2: { fontWeight: 700 },
-        h3: { fontWeight: 600 },
-        h4: { fontWeight: 600 },
-        h5: { fontWeight: 500 },
+        h1: { fontWeight: 700, color: '#0F172A' },
+        h2: { fontWeight: 700, color: '#0F172A' },
+        h3: { fontWeight: 600, color: '#0F172A' },
+        h4: { fontWeight: 600, color: '#0F172A' },
+        h5: { fontWeight: 500, color: '#0F172A' },
         h6: { fontWeight: 500 },
         // Reduce default body font size slightly if desired
         // body1: { fontSize: '0.95rem' },

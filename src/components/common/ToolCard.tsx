@@ -21,9 +21,14 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
 
     const handleButtonClick = () => {
         if (tool.status === 'active') {
-            router.push(tool.href);
+            try {
+                router.push(tool.href);
+            } catch (error) {
+                console.error(`Failed to navigate to ${tool.href}:`, error);
+            }
         }
-    }
+    };
+
     return (
         <Card
             sx={{

@@ -22,8 +22,7 @@ const legalLinks = [
 ];
 
 export default function Footer() {
-    const activeTools = tools.filter(tool => tool.status === 'active');
-
+    const activeTools = tools.filter(tool => tool.status === 'active' && tool.href && typeof tool.href === 'string' && tool.href.trim() !== '');
     return (
         <Box
             component="footer"
@@ -59,22 +58,28 @@ export default function Footer() {
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             Tools
                         </Typography>
-                        {activeTools.map(tool => (
-                            <Link
-                                component={NextLink}
-                                key={tool.id}
-                                href={tool.href}
-                                underline="none"
-                                sx={{
-                                    display: 'block',
-                                    mb: 0.5,
-                                    color: 'rgba(255, 255, 255, 0.7)',
-                                    '&:hover': { color: '#fff' },
-                                }}
-                            >
-                                {tool.name}
-                            </Link>
-                        ))}
+                        {activeTools.map(tool => {
+                            if (!tool.href || typeof tool.href !== 'string' || tool.href.trim() === '') {
+                                console.warn(`Invalid href for tool with id: ${tool.id}`);
+                                return null; // Skip rendering if href is invalid
+                            }
+                            return (
+                                <Link
+                                    component={NextLink}
+                                    key={tool.id}
+                                    href={tool.href}
+                                    underline="none"
+                                    sx={{
+                                        display: 'block',
+                                        mb: 0.5,
+                                        color: 'rgba(255, 255, 255, 0.7)',
+                                        '&:hover': { color: '#fff' },
+                                    }}
+                                >
+                                    {tool.name}
+                                </Link>
+                            );
+                        })}
                         <Link
                             component={NextLink}
                             href="/all-tools"

@@ -4,7 +4,6 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import ToolCard from '@/components/common/ToolCard';
 import { tools } from '@/lib/toolsData';
 
@@ -40,14 +39,15 @@ export default function HomePage() {
           Transform, convert, and optimize your files with our powerful suite of free online tools.
         </Typography>
         {/* Stack buttons on smaller screens */}
-        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'center', gap: 2 }}>
+        {/* TODO: We will enable this when we are ready with it  */}
+        {/* <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'center', gap: 2 }}>
           <Button variant="contained" size="large" color="primary">
             Get Started
           </Button>
           <Button variant="outlined" size="large" color="primary">
             View Tools
           </Button>
-        </Box>
+        </Box> */}
       </Box>
 
       {/* Tools Grid Section */}
