@@ -6,9 +6,10 @@ import Script from 'next/script';
 const InlineAd: React.FC = () => {
     useEffect(() => {
         // Ensure adsbygoogle is loaded
-        if (typeof window !== 'undefined') {
-            window.adsbygoogle = window.adsbygoogle || { push: () => {} };
-            window.adsbygoogle.push({});
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if (typeof window !== 'undefined' && (window as any).adsbygoogle) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            (window as any).adsbygoogle.push({});
         }
     }, []);
 
