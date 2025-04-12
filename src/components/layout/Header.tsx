@@ -22,7 +22,6 @@ import AppsIcon from '@mui/icons-material/Apps';
 export default function Header() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [elevated, setElevated] = React.useState(false);
-    const pathname = usePathname();
 
     const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 

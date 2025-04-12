@@ -4,7 +4,6 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from 'next/link';
 import { type ToolInfo } from '@/lib/toolsData';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
