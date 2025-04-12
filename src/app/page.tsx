@@ -68,7 +68,7 @@ export default function HomePage() {
         {/* Increased spacing on larger screens */}
         <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{display: 'flex', justifyContent: 'center'}}>
           {tools.map((tool) => (
-            // @ts-expect-error
+            // @ts-expect-error ToolCard expects a specific type for "tool"
             <Grid key={tool.id} item xs={12} sm={6} md={4}>
               <ToolCard tool={tool} />
             </Grid>

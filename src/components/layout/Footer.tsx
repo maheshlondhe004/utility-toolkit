@@ -43,7 +43,7 @@ export default function Footer() {
                     justifyContent: 'center', // Center content vertically
                 }}>
                     {/* Left: Branding */}
-                    {/* @ts-expect-error */}
+                    {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
                     <Grid item xs={12} sm={6} md={3} >
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             UtilityHub
@@ -54,7 +54,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Tools */}
-                    {/* @ts-expect-error */}
+                    {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             Tools
@@ -91,7 +91,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Company */}
-                    {/* @ts-expect-error */}
+                    {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             Company
@@ -115,7 +115,7 @@ export default function Footer() {
                     </Grid>
 
                     {/* Legal */}
-                    {/* @ts-expect-error */}
+                    {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
                     <Grid item xs={12} sm={6} md={3}>
                         <Typography variant="h6" fontWeight="bold" gutterBottom>
                             Legal
