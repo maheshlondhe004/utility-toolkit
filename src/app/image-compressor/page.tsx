@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useRef } from 'react';
 import { Box, Typography, Button, Slider, Card, CardContent } from '@mui/material';
-import { CloudUpload, Image, Download } from '@mui/icons-material';
+import { CloudUpload, Image as ImageIcon, Download } from '@mui/icons-material';
+import Image from 'next/image';
 
 const textColor = '#0F172A';
 
@@ -97,7 +98,7 @@ const ImageCompressor = () => {
 
             {/* Title Section */}
             <Box display="flex" alignItems="center" sx={{ mb: '16px !important', px: '16px !important' }}>
-                <Image sx={{ mr: '8px !important', color: textColor }} />
+                <ImageIcon titleAccess='image compressor' sx={{ mr: '8px !important', color: textColor }} /> 
                 <Typography variant="h5" fontWeight="bold" sx={{ color: textColor, my: '16px !important' }}>Image Compressor</Typography>
             </Box>
 
@@ -179,9 +180,9 @@ const ImageCompressor = () => {
                                 }}
                             >
                                 {compressedImage ? (
-                                    <img src={compressedImage} alt="Compressed preview" style={{ maxWidth: '100%', maxHeight: '100%' }} />
+                                    <Image src={compressedImage} alt="Compressed preview" style={{ maxWidth: '100%', maxHeight: '100%' }} /> 
                                 ) : (
-                                    <Image fontSize="large" sx={{ color: '#ccc' }} />
+                                    <ImageIcon titleAccess='compress image placeholder' fontSize="large" sx={{ color: '#ccc' }} /> 
                                 )}
                             </Box>
                             <Box sx={{ mt: '16px !important' }}>

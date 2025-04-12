@@ -16,7 +16,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Container from '@mui/material/Container';
-import { usePathname } from 'next/navigation';
 import AppsIcon from '@mui/icons-material/Apps';
 
 export default function Header() {
