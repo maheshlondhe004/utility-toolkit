@@ -15,9 +15,9 @@ import Script from 'next/script';
 
 // Define base spacing value manually based on theme.ts
 // Fallback to 8 if theme.spacing is not defined for some reason
-const baseSpacing = typeof theme.spacing === 'function'
-  ? 8 // Default MUI spacing if theme.spacing is somehow still a function reference
-  : (theme.spacing || 8);
+// const baseSpacing = typeof theme.spacing === 'function'
+//   ? 8 // Default MUI spacing if theme.spacing is somehow still a function reference
+//   : (theme.spacing || 8);
 
 
 export const metadata: Metadata = {
