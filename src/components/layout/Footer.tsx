@@ -10,16 +10,16 @@ import Grid from '@mui/material/Grid';
 import { tools } from '@/lib/toolsData';
 import Head from 'next/head';
 
-const companyLinks = [
-    { label: 'About', href: '/about' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Support', href: '/support' },
-];
+// const companyLinks = [
+//     { label: 'About', href: '/about' },
+//     { label: 'Pricing', href: '/pricing' },
+//     { label: 'Support', href: '/support' },
+// ];
 
 const legalLinks = [
     { label: 'Privacy Policy', href: '/privacy-policy' },
-    { label: 'Terms of Service', href: '/terms-of-service' },
-    { label: 'Cookie Policy', href: '/cookie-policy' },
+    // { label: 'Terms of Service', href: '/terms-of-service' },
+    // { label: 'Cookie Policy', href: '/cookie-policy' },
 ];
 
 export default function Footer() {
@@ -58,7 +58,7 @@ export default function Footer() {
                         {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
                         <Grid item xs={12} sm={6} md={3} >
                             <Typography variant="h6" fontWeight="bold" gutterBottom>
-                                toolsverse
+                                ToolsVerse
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
                                 Your all-in-one solution for file conversion and optimization
@@ -109,8 +109,7 @@ export default function Footer() {
                         </Grid>
 
                         {/* Company */}
-                        {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
-                        <Grid item xs={12} sm={6} md={3}>
+                        {/* <Grid item xs={12} sm={6} md={3}>
                             <Typography variant="h6" fontWeight="bold" gutterBottom>
                                 Company
                             </Typography>
@@ -130,7 +129,7 @@ export default function Footer() {
                                     {link.label}
                                 </Link>
                             ))}
-                        </Grid>
+                        </Grid> */}
 
                         {/* Legal */}
                         {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
@@ -160,7 +159,7 @@ export default function Footer() {
                     {/* Footer bottom */}
                     <Box mt={6} textAlign="center">
                         <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.5)' }}>
-                            © {new Date().getFullYear()} toolsverse. All rights reserved.
+                            © {new Date().getFullYear()} ToolsVerse. All rights reserved.
                         </Typography>
                     </Box>
                 </Container>

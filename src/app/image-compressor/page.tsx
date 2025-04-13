@@ -18,6 +18,11 @@ const ImageCompressor = () => {
     const [compressedSize, setCompressedSize] = useState(0);
     const [imageWidth, setImageWidth] = useState(0);
     const [imageHeight, setImageHeight] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [isDropped, setIsDropped] = useState(false);
+    const [isInvalid, setIsInvalid] = useState(false);
+    const [dropMessage, setDropMessage] = useState('Drag and drop your image here or');
+
     const fileInputRef = useRef<HTMLInputElement | null>(null);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -115,10 +120,10 @@ const ImageCompressor = () => {
                 <link rel="canonical" href="https://www.toolsverse.in/image-compressor" />
             </Head>
             <Script
-                    async
-                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}`}
-                    crossOrigin="anonymous"
-                />
+                async
+                src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}`}
+                crossOrigin="anonymous"
+            />
             <Box>
                 {/* Google Ads Banner */}
                 {/* <Box width="97%" height={60} bgcolor="#f0f0f0" display="flex" justifyContent="center" alignItems="center" sx={{ mt: '16px !important', mb: '16px !important' }}>
@@ -138,19 +143,88 @@ const ImageCompressor = () => {
                         <Card sx={{ mb: '16px !important', p: '16px !important' }}>
                             <CardContent>
                                 <Box
+                                    onDragOver={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsDragging(true);
+                                        setIsDropped(false);      // Reset on new drag
+                                        setIsInvalid(false);      // Clear error state
+                                        setDropMessage('Drag and drop your image here or');
+                                    }}
+                                    onDragLeave={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsDragging(false);
+                                    }}
+                                    onDrop={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setIsDragging(false);
+
+                                        const files = e.dataTransfer.files;
+                                        if (files && files.length > 0) {
+                                            const file = files[0];
+                                            if (file && file.type.startsWith('image/') && file.size <= 10 * 1024 * 1024) {
+                                                setIsDropped(true);
+                                                setIsInvalid(false);
+                                                setImageName(file.name);
+                                                setImageType(file.type);
+                                                setOriginalSize(file.size);
+
+                                                const reader = new FileReader();
+                                                reader.onload = (e) => {
+                                                    if (e.target && e.target.result) {
+                                                        const img = new window.Image();
+                                                        img.onload = () => {
+                                                            setImageWidth(img.width);
+                                                            setImageHeight(img.height);
+                                                            setImage(e.target?.result as string);
+                                                        };
+                                                        img.src = e.target.result as string;
+                                                    }
+                                                };
+                                                reader.readAsDataURL(file);
+
+                                                setDropMessage(`Selected: ${file.name}`);
+                                            } else {
+                                                setIsInvalid(true);
+                                                setIsDropped(false);
+                                                setImage(null);
+                                                setDropMessage('Invalid file format or size. Please upload a valid image under 10MB.');
+                                            }
+                                        }
+                                    }}
                                     sx={{
                                         border: '2px dashed #ccc',
                                         borderRadius: 2,
-                                        height: 200,
+                                        height: 'auto',
+                                        minHeight: 200,
+                                        py: '16px !important',
+                                        px: '24px !important',
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'center',
                                         alignItems: 'center',
-                                        textAlign: 'center'
+                                        textAlign: 'center',
+                                        bgcolor: isInvalid
+                                            ? '#fee2e2' // red
+                                            : isDropped
+                                                ? '#d1fae5' // green
+                                                : isDragging
+                                                    ? '#e0f2fe' // blue
+                                                    : 'transparent',
+                                        borderColor: isInvalid
+                                            ? '#ef4444' // red
+                                            : isDragging
+                                                ? '#3b82f6' // blue
+                                                : '#ccc',
+                                        transition: 'all 0.3s ease-in-out',
                                     }}
                                 >
-                                    <CloudUpload fontSize="large" sx={{ color: '#aaa' }} />
-                                    <Typography mt={1} sx={{ color: textColor, my: '16px !important' }}>Drag and drop your image here or</Typography>
+                                    <CloudUpload fontSize="large" sx={{ color: isInvalid ? '#ef4444' : isDropped ? '#10b981' : '#aaa', fontSize: '2.5rem' }} />
+                                    <Typography mt={1} sx={{ color: isInvalid ? '#ef4444' : textColor, my: '16px !important' }}>
+                                        {dropMessage}
+                                    </Typography>
                                     <Button variant="contained" onClick={triggerFileInput} sx={{ my: '16px !important' }}>
                                         Choose File
                                     </Button>
@@ -161,8 +235,11 @@ const ImageCompressor = () => {
                                         style={{ display: 'none' }}
                                         onChange={handleFileChange}
                                     />
-                                    <Typography variant="caption" sx={{ color: textColor }}>Maximum file size: 10MB</Typography>
+                                    <Typography variant="caption" sx={{ color: textColor }}>
+                                        Maximum file size: 10MB
+                                    </Typography>
                                 </Box>
+
                             </CardContent>
                         </Card>
 
@@ -209,10 +286,10 @@ const ImageCompressor = () => {
                                     }}
                                 >
                                     {compressedImage ? (
-                                        <Image src={compressedImage} alt="Compressed preview"  
-                                        width={imageWidth} // Dynamically calculated width
-                                        height={imageHeight} // Dynamically calculated height 
-                                        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+                                        <Image src={compressedImage} alt="Compressed preview"
+                                            width={imageWidth} // Dynamically calculated width
+                                            height={imageHeight} // Dynamically calculated height 
+                                            style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
                                     ) : (
                                         <ImageIcon titleAccess='compress image placeholder' fontSize="large" sx={{ color: '#ccc' }} />
                                     )}

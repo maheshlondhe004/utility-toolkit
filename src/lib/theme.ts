@@ -36,7 +36,7 @@ let theme = createTheme({
         h3: { fontWeight: 600, color: '#0F172A' },
         h4: { fontWeight: 600, color: '#0F172A' },
         h5: { fontWeight: 500, color: '#0F172A' },
-        h6: { fontWeight: 500 },
+        h6: { fontWeight: 500, color: '#0F172A' },
         // Reduce default body font size slightly if desired
         // body1: { fontSize: '0.95rem' },
     },

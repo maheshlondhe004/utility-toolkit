@@ -32,19 +32,19 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
     return (
         <Card
             sx={{
-                height: { xs: '180px', md: '180px' }, // Increased height
-                width: { xs: '100%', sm: '280px', md: '320px' }, // Increased width
+                height: '100%', // Allow height to grow with content
+                width: '300px', // ✅ Fixed width
                 display: 'flex',
                 flexDirection: 'column',
-                borderRadius: 2, // Rounded corners
-                boxShadow: 3, // Subtle shadow for depth
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Smooth hover effect
+                borderRadius: 2,
+                boxShadow: 3,
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
-                    transform: 'scale(1.05)', // Slight zoom on hover
-                    boxShadow: 6, // Enhanced shadow on hover
+                    transform: 'scale(1.05)',
+                    boxShadow: 6,
                 },
                 backgroundColor: 'background.paper',
-                padding: "16px !important", // Consistent padding
+                padding: '16px !important',
             }}
         >
             <CardContent
