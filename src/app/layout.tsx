@@ -31,6 +31,9 @@ export default function RootLayout({
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
         />
+        <Script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" 
+          data-slug="workmaheshq" data-color="#FFDD00" data-emoji=""  data-font="Lato" data-text="Buy me a coffee" 
+          data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" />
       </head>
       <body style={{ margin: 0 }}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
