@@ -8,6 +8,7 @@ import ToolCard from '@/components/common/ToolCard';
 import { tools } from '@/lib/toolsData';
 
 export default function HomePage() {
+  const toolsList = tools.filter((tool) => tool.status === 'active' && tool.href && typeof tool.href === 'string' && tool.href.trim() !== '');
   return (
     <Box>
       {/* Hero Section */}
@@ -67,7 +68,7 @@ export default function HomePage() {
         </Typography>
         {/* Increased spacing on larger screens */}
         <Grid container spacing={{ xs: 2, sm: 3, md: 4 }} sx={{display: 'flex', justifyContent: 'center'}}>
-          {tools.map((tool) => (
+          {toolsList.map((tool) => (
             // @ts-expect-error ToolCard expects a specific type for "tool"
             <Grid key={tool.id} item xs={12} sm={6} md={4}>
               <ToolCard tool={tool} />

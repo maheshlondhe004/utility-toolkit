@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import './globals.css';
 import Script from 'next/script';
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: 'ToolsVerse - Your All-in-One Online Toolkit',
@@ -96,6 +97,7 @@ export default function RootLayout({
             </Box>
           </ThemeProvider>
         </AppRouterCacheProvider>
+        <Analytics />
       </body>
     </html>
   );
