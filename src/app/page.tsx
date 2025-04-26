@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <Box>
       {/* Hero Section */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', gap: '16px', marginBottom: '16px !important', textAlign: 'center', py: { xs: 6, md: 10 } }}> {/* Responsive Padding */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', gap: '16px', textAlign: 'center', py: { xs: 1, md: 6 } }}> {/* Responsive Padding */}
         <Typography
           variant="h2" // Base variant
           component="h1"
@@ -20,7 +20,7 @@ export default function HomePage() {
           sx={{
             fontWeight: 'bold',
             // Responsive font size adjustments (example)
-            fontSize: { xs: '2.5rem', sm: '3rem', md: '3.75rem' }
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3.75rem' }
           }}
         >
           All-in-One Utility Tools
@@ -52,7 +52,7 @@ export default function HomePage() {
       </Box>
 
       {/* Tools Grid Section */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', gap: '16px', marginBottom: '16px', py: { xs: 6, md: 8 } }}> {/* Responsive Padding */}
+      <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', gap: '16px', marginBottom: '16px' }}> {/* Responsive Padding */}
         <Typography
           variant="h4" // Base variant
           component="h2"

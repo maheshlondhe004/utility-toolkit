@@ -51,7 +51,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
                     boxShadow: 6,
                 },
                 backgroundColor: 'background.paper',
-                padding: '16px !important',
+                padding: '16px ',
             }}
         >
             <CardContent
@@ -89,7 +89,7 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
                     sx={{
                         fontSize: { xs: '0.9rem', md: '1rem' },
                         lineHeight: 1.6,
-                        marginBottom: "8px !important",
+                        marginBottom: "8px ",
                     }}
                 >
                     {tool.description}
@@ -97,9 +97,9 @@ const ToolCard: React.FC<ToolCardProps> = ({ tool }) => {
             </CardContent>
             <CardActions
                 sx={{
-                    px: { xs: 2, md: 3 },
+                    // px: { xs: 2, md: 3 },
                     py: 2,
-                    backgroundColor: 'action.hover',
+                    // backgroundColor: 'action.hover',
                     borderTop: 1,
                     borderColor: 'divider',
                 }}

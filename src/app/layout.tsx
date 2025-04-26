@@ -10,7 +10,8 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import './globals.css';
 import Script from 'next/script';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'ToolsVerse - Your All-in-One Online Toolkit',
@@ -38,24 +39,24 @@ export default function RootLayout({
             <CssBaseline />
             <Box
               sx={{
-                display: 'flex !important',
-                flexDirection: 'column !important',
-                height: '100vh !important',
-                backgroundColor: '#F8F9FA !important',
+                display: 'flex ',
+                flexDirection: 'column ',
+                height: '100vh ',
+                backgroundColor: '#F8F9FA ',
               }}
             >
               {/* Fixed Header */}
               <Box
                 component="header"
                 sx={{
-                  position: 'fixed !important',
-                  top: '0 !important',
-                  left: '0 !important',
-                  right: '0 !important',
-                  height: '64px !important',
-                  zIndex: '1100 !important',
-                  backgroundColor: 'background.default !important',
-                  boxShadow: '1 !important',
+                  position: 'fixed ',
+                  top: '0 ',
+                  left: '0 ',
+                  right: '0 ',
+                  height: '64px ',
+                  zIndex: '1100 ',
+                  backgroundColor: 'background.default ',
+                  boxShadow: '1 ',
                 }}
               >
                 <Header />
@@ -65,15 +66,16 @@ export default function RootLayout({
               <Box
                 component="main"
                 sx={{
-                  flex: '1 !important',
-                  marginTop: '64px !important',
-                  marginBottom: { xs: '200px !important', sm: '200px !important', md: '160px !important' },
-                  overflowY: 'auto !important',
-                  paddingLeft: { xs: '8px !important', sm: '8px !important', md: '24px !important' },
-                  paddingRight: { xs: '8px !important', sm: '8px !important', md: '24px !important' },
+                  flex: '1 ',
+                  marginTop: '64px ',
+                  marginBottom: { xs: '200px ', sm: '200px ', md: '160px ' },
+                  overflowY: 'auto ',
+                  paddingLeft: { xs: '8px ', sm: '8px ', md: '24px ' },
+                  paddingRight: { xs: '8px ', sm: '8px ', md: '24px ' },
                 }}
               >
-                <Container maxWidth="lg" sx={{ paddingTop: '24px !important', paddingBottom: '24px !important' }}>
+                <Container maxWidth="lg" sx={{ paddingTop: '24px ', paddingBottom: '24px ' }}>
+                  <Breadcrumb />
                   {children}
                 </Container>
               </Box>
@@ -82,14 +84,14 @@ export default function RootLayout({
               <Box
                 component="footer"
                 sx={{
-                  position: 'fixed !important',
-                  bottom: '0 !important',
-                  left: '0 !important',
-                  right: '0 !important',
-                  height: { xs: '200px !important', sm: '200px !important', md: '160px !important' },
-                  backgroundColor: 'background.paper !important',
-                  boxShadow: '1 !important',
-                  zIndex: '1100 !important',
+                  position: 'fixed ',
+                  bottom: '0 ',
+                  left: '0 ',
+                  right: '0 ',
+                  height: { xs: '200px ', sm: '200px ', md: '160px ' },
+                  backgroundColor: 'background.paper ',
+                  boxShadow: '1 ',
+                  zIndex: '1100 ',
                 }}
               >
                 <Footer />

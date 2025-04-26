@@ -32,12 +32,12 @@ const PrivacyPolicyPage = () => {
                 sx={{
                     backgroundColor: theme.palette.primary.main,
                     py: { xs: 6, md: 16 },
-                    padding: '24px !important',
+                    padding: '24px ',
                     color: '#fff',
                     textAlign: 'center',
                     width: '100%',
-                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center !important',
-                    paddingBottom: "16px !important",
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center ',
+                    paddingBottom: "16px ",
                 }}
             >
                 <Typography variant="h3" fontWeight="bold" gutterBottom sx={{ color: '#fff' }}>
@@ -108,13 +108,13 @@ const PrivacyPolicyPage = () => {
                         },
                     ].map((section, index) => (
                         <Box key={index}>
-                            <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, marginTop: "16px !important" }}>
+                            <Typography variant="h6" fontWeight="bold" sx={{ mb: 1, marginTop: "16px " }}>
                                 {section.title}
                             </Typography>
-                            <Typography variant="body1" color="text.secondary" sx={{ marginBottom: "16px !important" }}>
+                            <Typography variant="body1" color="text.secondary" sx={{ marginBottom: "16px " }}>
                                 {section.desc}
                             </Typography>
-                            {index !== 11 && <Divider sx={{ mb: "16px !important" }} />}
+                            {index !== 11 && <Divider sx={{ mb: "16px " }} />}
                         </Box>
                     ))}
                 </Container>

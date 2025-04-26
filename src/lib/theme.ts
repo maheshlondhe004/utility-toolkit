@@ -24,7 +24,7 @@ let theme = createTheme({
             paper: '#FFFFFF',
         },
         text: {
-            primary: '#ffffff',
+            primary: '#0F172A', // Add your desired primary text color here
             secondary: '#6C757D',
         }
         // Add more customizations
@@ -50,7 +50,7 @@ let theme = createTheme({
                 root: {
                     textTransform: 'none', // Prevent uppercase default
                     borderRadius: 6,
-                    padding: '8px 20px !important', // Adjust button padding
+                    padding: '8px 20px ', // Adjust button padding
                 },
             },
             defaultProps: {
@@ -86,10 +86,10 @@ let theme = createTheme({
         MuiContainer: {
             styleOverrides: {
                 root: {
-                    paddingLeft: '24px !important',
-                    paddingRight: '24px !important',
-                    width: '100% !important',
-                    maxWidth: '100% !important',
+                    paddingLeft: '24px ',
+                    paddingRight: '24px ',
+                    width: '100% ',
+                    maxWidth: '100% ',
                 },
             },
             defaultProps: {
@@ -102,7 +102,7 @@ let theme = createTheme({
                     fontWeight: 500, // Adjust font weight
                     fontSize: '1rem', // Adjust font size
                     color: '#0F172A', // Navy blue color
-                    padding: '8px 16px !important', // Adjust padding
+                    padding: '8px 16px ', // Adjust padding
                 },
             },
         }

@@ -83,15 +83,15 @@ const ImageCompressor = () => {
 
             <Box>
                 {/* Title and Upload */}
-                <Box display="flex" alignItems="center" sx={{ mb: '16px !important', px: '16px !important' }}>
-                    <ImageIcon sx={{ mr: '8px !important', color: textColor }} />
-                    <Typography variant="h5" fontWeight="bold" sx={{ color: textColor, my: '16px !important' }}>Image Compressor</Typography>
+                <Box display="flex" alignItems="center" sx={{ mb: '16px ', px: '16px ' }}>
+                    <ImageIcon sx={{ mr: '8px ', color: textColor }} />
+                    <Typography variant="h5" fontWeight="bold" sx={{ color: textColor, my: '16px ' }}>Image Compressor</Typography>
                 </Box>
 
-                <Box display="flex" flexWrap="wrap" sx={{ px: '16px !important', columnGap: '16px !important' }}>
+                <Box display="flex" flexWrap="wrap" sx={{ px: '16px ', columnGap: '16px ' }}>
                     {/* Left Panel */}
-                    <Box sx={{ width: { xs: '100%', md: '49%' }, mb: { xs: '24px !important', md: 0 } }}>
-                        <Card sx={{ mb: '16px !important', p: '16px !important' }}>
+                    <Box sx={{ width: { xs: '100%', md: '49%' }, mb: { xs: '24px ', md: 0 } }}>
+                        <Card sx={{ mb: '16px ', p: '16px ' }}>
                             <CardContent>
                                 <Box
                                     onDragOver={(e) => {
@@ -125,8 +125,8 @@ const ImageCompressor = () => {
                                         border: '2px dashed #ccc',
                                         borderRadius: 2,
                                         minHeight: 200,
-                                        py: '16px !important',
-                                        px: '24px !important',
+                                        py: '16px ',
+                                        px: '24px ',
                                         display: 'flex',
                                         flexDirection: 'column',
                                         justifyContent: 'center',
@@ -138,19 +138,19 @@ const ImageCompressor = () => {
                                     }}
                                 >
                                     <CloudUpload fontSize="large" sx={{ color: isInvalid ? '#ef4444' : isDropped ? '#10b981' : '#aaa', fontSize: '2.5rem' }} />
-                                    <Typography mt={1} sx={{ color: isInvalid ? '#ef4444' : textColor, my: '16px !important' }}>{dropMessage}</Typography>
-                                    <Button variant="contained" onClick={triggerFileInput} sx={{ my: '16px !important' }}>Choose Files</Button>
+                                    <Typography mt={1} sx={{ color: isInvalid ? '#ef4444' : textColor, my: '16px ' }}>{dropMessage}</Typography>
+                                    <Button variant="contained" onClick={triggerFileInput} sx={{ my: '16px ' }}>Choose Files</Button>
                                     <input type="file" accept="image/*" ref={fileInputRef} multiple style={{ display: 'none' }} onChange={handleFileChange} />
                                     <Typography variant="caption" sx={{ color: textColor }}>Maximum file size per image: 10MB</Typography>
                                 </Box>
                             </CardContent>
                         </Card>
 
-                        <Card sx={{ mb: '16px !important', p: '16px !important' }}>
+                        <Card sx={{ mb: '16px ', p: '16px ' }}>
                             <CardContent>
-                                <Typography fontWeight="bold" sx={{ color: textColor, my: '16px !important' }}>Compression Settings</Typography>
-                                <Box sx={{ mb: '24px !important' }}>
-                                    <Typography variant="subtitle2" gutterBottom sx={{ color: textColor, my: '16px !important' }}>Compression Quality</Typography>
+                                <Typography fontWeight="bold" sx={{ color: textColor, my: '16px ' }}>Compression Settings</Typography>
+                                <Box sx={{ mb: '24px ' }}>
+                                    <Typography variant="subtitle2" gutterBottom sx={{ color: textColor, my: '16px ' }}>Compression Quality</Typography>
                                     <Box display="flex" justifyContent="space-between" alignItems="center">
                                         <Typography variant="caption" sx={{ color: textColor }}>Low Quality</Typography>
                                         <Typography variant="caption" sx={{ color: textColor }}>{quality}%</Typography>
@@ -158,7 +158,7 @@ const ImageCompressor = () => {
                                     </Box>
                                     <Slider value={quality} min={1} max={100} onChange={(e, val) => setQuality(val)} />
                                 </Box>
-                                <Box sx={{ mt: '16px !important' }}>
+                                <Box sx={{ mt: '16px ' }}>
                                     <Button variant="contained" fullWidth onClick={handleCompress}>Compress</Button>
                                 </Box>
                             </CardContent>
@@ -166,10 +166,10 @@ const ImageCompressor = () => {
                     </Box>
 
                     {/* Right Panel - Preview and Download */}
-                    <Box sx={{ width: { xs: '100%', md: '49%' }, pr: { md: '16px !important' } }}>
-                        <Card sx={{ mb: '16px !important', p: '16px !important' }}>
+                    <Box sx={{ width: { xs: '100%', md: '49%' }, pr: { md: '16px ' } }}>
+                        <Card sx={{ mb: '16px ', p: '16px ' }}>
                             <CardContent>
-                                <Typography fontWeight="bold" sx={{ color: textColor, mb: '16px !important' }}>Compressed Images</Typography>
+                                <Typography fontWeight="bold" sx={{ color: textColor, mb: '16px ' }}>Compressed Images</Typography>
                                 {compressedImages.length === 0 ? (
                                     <Typography sx={{ color: textColor }}>No images compressed yet.</Typography>
                                 ) : (
@@ -190,7 +190,7 @@ const ImageCompressor = () => {
                                             >
                                                 <Image src={img.url} alt={`compressed-${index}`} width={200} height={200} style={{ objectFit: 'contain' }} />
                                             </Box>
-                                            <Box sx={{ mt: "16px !important", mb: "16px !important" }} display="flex" justifyContent="space-between" alignItems="flex-start" flexDirection={{ xs: 'row', md: 'column' }}>
+                                            <Box sx={{ mt: "16px ", mb: "16px " }} display="flex" justifyContent="space-between" alignItems="flex-start" flexDirection={{ xs: 'row', md: 'column' }}>
                                                 <Typography variant="body2" sx={{ color: textColor }}>File name: {img.name}</Typography>
                                                 <Typography variant="body2" sx={{ color: textColor }}>Compression ratio: {getCompressionRatio(img.originalSize, img.size)}</Typography>
                                                 <Typography variant="body2" sx={{ color: textColor }}>Space saved: {getSpaceSaved(img.originalSize, img.size)}</Typography>
@@ -201,7 +201,7 @@ const ImageCompressor = () => {
                                                 startIcon={<Download />}
                                                 href={img.url}
                                                 download={`compressed-${img.name}`}
-                                                sx={{ mt: "16px !important", mb: "16px !important" }}
+                                                sx={{ mt: "16px ", mb: "16px " }}
                                             >
                                                 Download
                                             </Button>

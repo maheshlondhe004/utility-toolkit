@@ -4,6 +4,7 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import VideocamIcon from '@mui/icons-material/Videocam';
 import CodeIcon from '@mui/icons-material/Code'; // Example from image
 import EditIcon from '@mui/icons-material/Edit'; // Example from image
+import CropIcon from '@mui/icons-material/Crop';
 
 export interface ToolInfo {
     id: string;
@@ -21,6 +22,14 @@ export const tools: ToolInfo[] = [
         description: 'Compress and optimize your images without losing quality.',
         href: '/image-compressor',
         icon: ImageIcon,
+        status: 'active',
+    },
+    {
+        id: 'image-cropper',
+        name: 'Image Cropper',
+        description: 'Crop your images online with easy-to-use cropper.',
+        href: '/image-cropper',
+        icon: CropIcon,
         status: 'active',
     },
     {

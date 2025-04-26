@@ -64,7 +64,7 @@ export default function Footer() {
                     pb: 4,
                 }}
             >
-                <Container maxWidth="lg" sx={{ padding: '24px !important', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: '16px' }}>
+                <Container maxWidth="lg" sx={{ padding: '24px ', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: '16px' }}>
                     <Grid container spacing={4} sx={{
                         textAlign: 'center', // Center text horizontally
                         display: 'flex', // Use flexbox for alignment
