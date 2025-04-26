@@ -22,6 +22,23 @@ const legalLinks = [
     // { label: 'Cookie Policy', href: '/cookie-policy' },
 ];
 
+function BuyMeCoffeeButton() {
+    return (
+        <a href="https://www.buymeacoffee.com/workmaheshq" target="_blank" rel="noopener noreferrer">
+            <img
+                src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                alt="Buy Me A Coffee"
+                style={{
+                    height: 'auto',
+                    width: '150px',
+                    maxWidth: '100%',
+                    zIndex: 3000,
+                }}
+            />
+        </a>
+    );
+}
+
 export default function Footer() {
     const activeTools = tools.filter(tool => tool.status === 'active' && tool.href && typeof tool.href === 'string' && tool.href.trim() !== '');
     return (
@@ -54,10 +71,14 @@ export default function Footer() {
                         flexDirection: 'row', // Stack content vertically
                         justifyContent: 'center', // Center content vertically
                     }}>
+                        {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
+                        <Grid item xs={12} sm={6} md={4} >
+                            <BuyMeCoffeeButton />
+                        </Grid>
                         {/* Left: Branding */}
                         {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
-                        <Grid item xs={12} sm={6} md={3} >
-                            <Typography variant="h6" fontWeight="bold" gutterBottom>
+                        <Grid item xs={12} sm={6} md={4} >
+                            <Typography variant="h6" style={{color: "#FFFFFF"}} fontWeight="bold" gutterBottom>
                                 ToolsVerse
                             </Typography>
                             <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
@@ -67,8 +88,8 @@ export default function Footer() {
 
                         {/* Tools */}
                         {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
-                        <Grid item xs={12} sm={6} md={3}>
-                            <Typography variant="h6" fontWeight="bold" gutterBottom>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Typography variant="h6" style={{color: "#FFFFFF"}} fontWeight="bold" gutterBottom>
                                 Tools
                             </Typography>
                             {activeTools.map(tool => {
@@ -109,7 +130,7 @@ export default function Footer() {
                         </Grid>
 
                         {/* Company */}
-                        {/* <Grid item xs={12} sm={6} md={3}>
+                        {/* <Grid item xs={12} sm={6} md={4}>
                             <Typography variant="h6" fontWeight="bold" gutterBottom>
                                 Company
                             </Typography>
@@ -133,8 +154,8 @@ export default function Footer() {
 
                         {/* Legal */}
                         {/* @ts-expect-error ToolCard expects a specific type for "tool" */}
-                        <Grid item xs={12} sm={6} md={3}>
-                            <Typography variant="h6" fontWeight="bold" gutterBottom>
+                        <Grid item xs={12} sm={6} md={4}>
+                            <Typography variant="h6" style={{color: "#FFFFFF"}} fontWeight="bold" gutterBottom>
                                 Legal
                             </Typography>
                             {legalLinks.map(link => (

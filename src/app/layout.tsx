@@ -31,9 +31,6 @@ export default function RootLayout({
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
         />
-        <Script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" 
-          data-slug="workmaheshq" data-color="#FFDD00" data-emoji=""  data-font="Lato" data-text="Buy me a coffee" 
-          data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" />
       </head>
       <body style={{ margin: 0 }}>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
@@ -70,7 +67,7 @@ export default function RootLayout({
                 sx={{
                   flex: '1 !important',
                   marginTop: '64px !important',
-                  marginBottom: {xs: '200px !important', sm: '200px !important', md: '160px !important'},
+                  marginBottom: { xs: '200px !important', sm: '200px !important', md: '160px !important' },
                   overflowY: 'auto !important',
                   paddingLeft: { xs: '8px !important', sm: '8px !important', md: '24px !important' },
                   paddingRight: { xs: '8px !important', sm: '8px !important', md: '24px !important' },
@@ -80,7 +77,7 @@ export default function RootLayout({
                   {children}
                 </Container>
               </Box>
-
+              {/* <BuyMeCoffeeButton /> */}
               {/* Fixed Footer */}
               <Box
                 component="footer"
@@ -89,7 +86,7 @@ export default function RootLayout({
                   bottom: '0 !important',
                   left: '0 !important',
                   right: '0 !important',
-                  height: {xs: '200px !important', sm: '200px !important', md: '160px !important'},
+                  height: { xs: '200px !important', sm: '200px !important', md: '160px !important' },
                   backgroundColor: 'background.paper !important',
                   boxShadow: '1 !important',
                   zIndex: '1100 !important',
