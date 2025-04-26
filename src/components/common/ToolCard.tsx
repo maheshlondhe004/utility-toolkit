@@ -15,7 +15,7 @@ interface ToolInfo {
     description: string;
     href: string;
     icon: React.ElementType;
-    status: 'active' | 'inactive';
+    status?: string; // 'active' or 'coming soon'
 }
 
 interface ToolCardProps {
