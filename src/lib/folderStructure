@@ -1,0 +1,65 @@
+utility-toolkit/
+├── src/
+│   ├── app/                  # <-- App Router directory is now inside src
+│   │   ├── layout.tsx        # Root layout (MUI Provider, Header, Footer, Sidebar)
+│   │   ├── page.tsx          # Homepage component
+│   │   ├── globals.css       # Global styles (Tailwind base included)
+│   │   │
+│   │   ├── image-compressor/
+│   │   │   └── page.tsx      # Image Compressor tool page component
+│   │   │   └── (metadata.ts) # Optional: separate file for metadata
+│   │   │
+│   │   ├── csv-excel-converter/
+│   │   │   └── page.tsx      # CSV/Excel Converter tool page component
+│   │   │
+│   │   ├── pdf-doc-converter/
+│   │   │   └── page.tsx      # PDF/DOC Converter tool page component
+│   │   │
+│   │   ├── video-mp3-converter/
+│   │   │   └── page.tsx      # Video->MP3 Converter tool page component
+│   │   │
+│   │   └── api/              # (Optional) API routes within src/app
+│   │       └── ...
+│   │
+│   ├── components/           # <-- Components directory inside src
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── SidebarAd.tsx
+│   │   │
+│   │   ├── ads/
+│   │   │   └── InlineAd.tsx
+│   │   │
+│   │   ├── common/
+│   │   │   └── ToolCard.tsx
+│   │   │
+│   │   └── tools/
+│   │       ├── ImageCompressorUI.tsx
+│   │       ├── CsvExcelConverterUI.tsx
+│   │       ├── PdfDocConverterUI.tsx
+│   │       └── VideoMp3ConverterUI.tsx
+│   │
+│   ├── lib/                  # <-- Lib directory inside src
+│   │   ├── theme.ts
+│   │   ├── toolsData.ts
+│   │   └── utils.ts
+│   │
+│   └── styles/               # <-- Optional: Styles directory inside src
+│       └── theme.module.css  # Example for CSS Modules if needed
+│
+├── public/                   # <-- Public remains outside src
+│   └── icons/
+│       └── image-compressor.svg
+│       └── ...
+│
+├── node_modules/
+├── .env.local
+├── .eslintrc.json
+├── .gitignore
+├── next.config.mjs
+├── package.json
+├── postcss.config.js
+├── prettier.config.js
+├── tailwind.config.js        # Tailwind CSS configuration
+├── tsconfig.json             # Check path aliases here (e.g., "@/*": ["src/*"])
+└── README.md

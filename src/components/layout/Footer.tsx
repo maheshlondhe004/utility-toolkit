@@ -58,10 +58,7 @@ export default function Footer() {
                 component="footer"
                 sx={{
                     backgroundColor: '#0F172A', // Dark navy
-                    color: 'white',
-                    mt: 8,
-                    pt: 6,
-                    pb: 4,
+                    color: 'white'
                 }}
             >
                 <Container maxWidth="lg" sx={{ padding: '24px ', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: '16px' }}>
@@ -116,7 +113,7 @@ export default function Footer() {
                             })}
                             <Link
                                 component={NextLink}
-                                href="/all-tools"
+                                href="/"
                                 underline="none"
                                 sx={{
                                     display: 'block',

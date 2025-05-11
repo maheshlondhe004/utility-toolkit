@@ -72,5 +72,13 @@ export const tools: ToolInfo[] = [
         icon: EditIcon,
         status: 'coming soon',
     },
+    {
+        id: 'image-resizer',
+        name: 'Image Resizer',
+        description: 'Resize your images by pixel or percentage.',
+        href: '/image-resizer',
+        icon: ImageIcon,
+        status: 'active',
+    },
     // Add more tools here...
 ];

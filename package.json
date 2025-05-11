@@ -17,6 +17,7 @@
     "@vercel/analytics": "^1.5.0",
     "browser-image-compression": "^2.0.2",
     "next": "15.3.0",
+    "pica": "^9.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-easy-crop": "^5.4.1"

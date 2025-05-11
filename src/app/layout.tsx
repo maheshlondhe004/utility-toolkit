@@ -49,14 +49,14 @@ export default function RootLayout({
               <Box
                 component="header"
                 sx={{
-                  position: 'fixed ',
-                  top: '0 ',
-                  left: '0 ',
-                  right: '0 ',
-                  height: '64px ',
-                  zIndex: '1100 ',
-                  backgroundColor: 'background.default ',
-                  boxShadow: '1 ',
+                  position: 'fixed',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '64px',
+                  zIndex: 1100,
+                  backgroundColor: 'background.default',
+                  boxShadow: 1,
                 }}
               >
                 <Header />
@@ -66,32 +66,32 @@ export default function RootLayout({
               <Box
                 component="main"
                 sx={{
-                  flex: '1 ',
-                  marginTop: '64px ',
-                  marginBottom: { xs: '200px ', sm: '200px ', md: '160px ' },
-                  overflowY: 'auto ',
-                  paddingLeft: { xs: '8px ', sm: '8px ', md: '24px ' },
-                  paddingRight: { xs: '8px ', sm: '8px ', md: '24px ' },
+                  flex: 1,
+                  marginTop: '64px',
+                  marginBottom: { xs: 0, sm: 0, md: 0 },
+                  overflowY: { xs: 'unset', sm: 'unset', md: 'auto' },
+                  paddingLeft: { xs: '8px', sm: '8px', md: '24px' },
+                  paddingRight: { xs: '8px', sm: '8px', md: '24px' },
                 }}
               >
-                <Container maxWidth="lg" sx={{ paddingTop: '24px ', paddingBottom: '24px ' }}>
+                <Container maxWidth="lg" sx={{ paddingTop: '24px', paddingBottom: '24px' }}>
                   <Breadcrumb />
                   {children}
                 </Container>
               </Box>
-              {/* <BuyMeCoffeeButton /> */}
+
               {/* Fixed Footer */}
               <Box
                 component="footer"
                 sx={{
-                  position: 'fixed ',
-                  bottom: '0 ',
-                  left: '0 ',
-                  right: '0 ',
-                  height: { xs: '200px ', sm: '200px ', md: '160px ' },
-                  backgroundColor: 'background.paper ',
-                  boxShadow: '1 ',
-                  zIndex: '1100 ',
+                  // position: { xs: 'relative', sm: 'relative', md: 'fixed' },
+                  bottom: { xs: 'unset', sm: 'unset', md: 0 },
+                  left: 0,
+                  right: 0,
+                  height: { xs: 'auto', sm: 'auto', md: 'auto' },
+                  backgroundColor: 'background.paper',
+                  boxShadow: 1,
+                  zIndex: 1100,
                 }}
               >
                 <Footer />

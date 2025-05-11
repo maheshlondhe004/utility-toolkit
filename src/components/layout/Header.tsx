@@ -42,26 +42,29 @@ export default function Header() {
 
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', py: 2 }}>
-            <Typography
-                variant="h6"
-                sx={{ fontWeight: 700, fontSize: '1.3rem', mb: 2 }}
-            >
-                ToolsVerse
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start', mb: 2, paddingLeft: 1, gap: 1 }}>
+                <AppsIcon color="primary" />
+                <Typography
+                    variant="h6"
+                    sx={{ fontWeight: 700, fontSize: '1.3rem' }}
+                >
+                    ToolsVerse
+                </Typography>
+            </Box>
             <Divider />
             <List>
-                {activeTools.map((item) => (
-                    <ListItem key={item.href} disablePadding>
-                        <ListItemButton component={Link} href={item.href}>
-                            <ListItemText primary={item.name} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-                {/* <ListItem disablePadding>
-                    <ListItemButton component={Link} href="/login">
-                        <ListItemText primary="Sign In" />
-                    </ListItemButton>
-                </ListItem> */}
+                {activeTools.map((item) => {
+                    return (
+                        <ListItem key={item.href} disablePadding>
+                            <ListItemButton component={Link} href={item.href}>
+                                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+                                    <item.icon color="primary" />
+                                    <ListItemText primary={item.name} />
+                                </Box>
+                            </ListItemButton>
+                        </ListItem>
+                    )
+                })}
             </List>
         </Box>
     );
